@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrafficGPT | AI Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app">
+    <aside class="sidebar">
+        <h2>🚦 TrafficGPT</h2>
+        <p class="muted">Your AI Travel Assistant</p>
+        <hr>
+        <h3>Explore</h3>
+        <p>🌦️ Weather updates</p>
+        <p>🚗 Traffic information</p>
+        <p>🗺️ Route estimates</p>
+        <div class="side-bottom">Powered by AI</div>
+    </aside>
+
+    <main class="main">
+        <header>
+            <div>
+                <h2>AI Chat Assistant</h2>
+                <span class="muted">Ask about travel, weather or general topics.</span>
+            </div>
+            <span class="status">● Ready</span>
+        </header>
+
+        <section id="chatBox" class="chat-box" aria-live="polite">
+            <div class="message bot">
+                <b>TrafficGPT 🤖</b>
+                <p>Hello! Welcome to TrafficGPT.</p>
+                <p>Ask me about traffic, weather, routes or general questions.</p>
+            </div>
+            <section class="traffic-sample" aria-label="Sample traffic data">
+                <div class="sample-heading">
+                    <h3>🚗 Sample Traffic Data</h3>
+                    <span>DEMO · NOT LIVE</span>
+                </div>
+                <p class="sample-route">Kakinada → Rajahmundry</p>
+                <div class="sample-stats">
+                    <div><b>~65 km</b><span>Distance</span></div>
+                    <div><b>~1 hr 30 min</b><span>Sample travel time</span></div>
+                    <div><b>~15 min</b><span>Sample traffic delay</span></div>
+                </div>
+                <p class="sample-note">Illustrative example only; actual traffic and travel time may differ.</p>
+            </section>
+        </section>
+
+        <div class="suggestions">
+            <button type="button" onclick="useQuestion('What is the weather in Kakinada?')">🌦️ Weather</button>
+            <button type="button" onclick="useQuestion('What is the traffic from Kakinada to Rajahmundry?')">🚗 Traffic</button>
+            <button type="button" onclick="useQuestion('Explain artificial intelligence in simple words.')">🤖 Ask AI</button>
+        </div>
+
+        <form id="chatForm">
+            <input id="userInput" type="text" placeholder="Ask anything..." autocomplete="off" maxlength="1000" required>
+            <button type="submit" id="sendBtn" aria-label="Send">➤</button>
+        </form>
+        <p class="footer">TrafficGPT • AI-powered travel assistant</p>
+    </main>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
